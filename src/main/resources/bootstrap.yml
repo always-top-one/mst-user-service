@@ -6,6 +6,10 @@ spring:
   cloud:
     config:
       uri: ${CONFIG_SERVER_URI:http://localhost:9999}
+      discovery:
+        enabled: false
+        serviceId: application
+      enabled: false
     consul:
       enabled: true
       host: ${CONSUL_HOST:127.0.0.1}
@@ -15,11 +19,7 @@ spring:
       discovery:
         enabled: true
         register: true
-    config:
-#      uri: http://127.0.0.1:6677
-      discovery:
-        enabled: true
-        serviceId: application
+        tags: localtag
 
 management:
   security:
