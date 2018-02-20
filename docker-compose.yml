@@ -4,10 +4,11 @@ services:
     stdin_open: true
     tty: true
     expose:
-     - "8080"
+     - "8090"
     environment:
         SPRING_PROFILES_ACTIVE: qa
         DB_HOST: 10.202.129.3
         CONSUL_HOST: 10.202.129.3
         SPRING_REDIS_HOST: 10.202.129.3
+        CONFIG_SERVER_URI: http://10.202.129.3:9999
     image: <IMAGE_NAME>
